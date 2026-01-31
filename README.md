@@ -1,16 +1,19 @@
-## Hi there 👋
+# > damian_clausi.sh
 
-<!--
-**damianclausi/damianclausi** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+> Software Developer | Focus on Fullstack & Scalability.
 
-Here are some ideas to get you started:
+### [ system --info ]
+- **Core:** Node.js | React | Python
+- **Infra:** Linux (Fedora/Debian) | Docker | AWS
+- **Status:** Networking & SysAdmin Student (CCNA/RHCSA)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### [ projects --latest ]
+- **Coop-System:** Fullstack management system.
+- **Vercel-Deploy:** API & Frontend integration with Supabase.
+- **Homelab:** Home server automation & Docker containers.
+
+### [ network --connect ]
+[Portfolio](https://damianclausi.github.io) | [LinkedIn](TU-LINK) | [Email](mailto:TU-EMAIL)
+
+---
+*Building robust solutions through clean code and automation.*

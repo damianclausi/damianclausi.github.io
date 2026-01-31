@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Damian Clausi - Developer Logs">
+    <meta name="author" content="Damian Clausi">
+    <title>Logs | Damian Clausi</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E⟩%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+        /* Blog Viewer Specific Styles */
+        .blog-header {
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
+            border-bottom: var(--border-width) solid var(--text-muted);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            margin-bottom: var(--space-md);
+            padding: var(--space-sm) var(--space-md);
+            border: var(--border-width) solid var(--text-muted);
+            transition: var(--transition-fast);
+        }
+
+        .back-link:hover {
+            border-color: var(--accent-green);
+            background-color: var(--bg-secondary);
+            text-shadow: none;
+        }
+
+        .blog-title {
+            font-size: 1.4rem;
+            color: var(--accent-green);
+            margin-bottom: var(--space-sm);
+        }
+
+        .blog-meta {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        /* Markdown Content Styles */
+        .markdown-content {
+            padding: var(--space-lg);
+            background-color: var(--bg-secondary);
+            border-left: 3px solid var(--accent-green);
+        }
+
+        .markdown-content h1,
+        .markdown-content h2,
+        .markdown-content h3,
+        .markdown-content h4 {
+            color: var(--accent-green);
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+        }
+
+        .markdown-content h1 {
+            font-size: 1.5rem;
+        }
+
+        .markdown-content h2 {
+            font-size: 1.3rem;
+        }
+
+        .markdown-content h3 {
+            font-size: 1.1rem;
+        }
+
+        .markdown-content p {
+            margin-bottom: var(--space-md);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        .markdown-content code {
+            background-color: var(--bg-tertiary);
+            color: var(--accent-green);
+            padding: 0.2em 0.4em;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .markdown-content pre {
+            background-color: var(--bg-tertiary);
+            padding: var(--space-md);
+            overflow-x: auto;
+            margin: var(--space-md) 0;
+            border: var(--border-width) solid var(--text-muted);
+        }
+
+        .markdown-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .markdown-content ul,
+        .markdown-content ol {
+            margin: var(--space-md) 0;
+            padding-left: var(--space-lg);
+        }
+
+        .markdown-content li {
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+
+        .markdown-content li::marker {
+            color: var(--accent-green);
+        }
+
+        .markdown-content a {
+            color: var(--accent-green);
+            text-decoration: underline;
+        }
+
+        .markdown-content blockquote {
+            border-left: 3px solid var(--accent-green);
+            padding-left: var(--space-md);
+            margin: var(--space-md) 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .markdown-content hr {
+            border: none;
+            border-top: var(--border-width) dashed var(--text-muted);
+            margin: var(--space-lg) 0;
+        }
+
+        .markdown-content img {
+            max-width: 100%;
+            height: auto;
+            margin: var(--space-md) 0;
+        }
+
+        /* Error State */
+        .error-message {
+            color: #ff4444;
+            padding: var(--space-lg);
+            border: var(--border-width) solid #ff4444;
+            background-color: rgba(255, 68, 68, 0.1);
+        }
+
+        /* Loading State */
+        .loading {
+            color: var(--text-muted);
+            padding: var(--space-lg);
+        }
+
+        .loading::after {
+            content: '';
+            animation: dots 1.5s steps(4, end) infinite;
+        }
+
+        @keyframes dots {
+
+            0%,
+            20% {
+                content: '';
+            }
+
+            40% {
+                content: '.';
+            }
+
+            60% {
+                content: '..';
+            }
+
+            80%,
+            100% {
+                content: '...';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scanlines"></div>
+    <div class="terminal-container">
+        <!-- Header -->
+        <header class="blog-header">
+            <a href="../index.html#logs" class="back-link">
+                <span class="command-prefix">cd</span>
+                <span>..</span>
+            </a>
+            <div class="section-header">
+                <span class="command-prefix">cat</span>
+                <span class="file-path" id="file-path">~/logs/loading...</span>
+            </div>
+        </header>
+
+        <!-- Blog Content -->
+        <main class="terminal-main">
+            <article id="blog-content" class="markdown-content">
+                <p class="loading">Loading</p>
+            </article>
+        </main>
+
+        <!-- Footer -->
+        <footer class="terminal-footer" id="footer">
+            <div class="footer-content">
+                <span class="footer-text">© 2026 Damian Clausi</span>
+                <span class="footer-separator">·</span>
+                <span class="footer-cursor">[█]</span>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        /**
+         * Markdown Blog Viewer
+         * Reads ?post= parameter, fetches .md file, renders with Marked.js
+         */
+        document.addEventListener('DOMContentLoaded', async () => {
+            const contentEl = document.getElementById('blog-content');
+            const filePathEl = document.getElementById('file-path');
+
+            // Get post name from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const postName = urlParams.get('post');
+
+            if (!postName) {
+                showError('No post specified. Use ?post=filename');
+                return;
+            }
+
+            // Update file path display
+            const fileName = `${postName}.md`;
+            filePathEl.textContent = `~/logs/${fileName}`;
+            document.title = `${postName} | Damian Clausi`;
+
+            try {
+                // Fetch the markdown file
+                const response = await fetch(fileName);
+
+                if (!response.ok) {
+                    throw new Error(`Post not found: ${fileName}`);
+                }
+
+                const markdown = await response.text();
+
+                // Configure Marked.js
+                marked.setOptions({
+                    breaks: true,
+                    gfm: true,
+                    headerIds: true
+                });
+
+                // Parse and render
+                contentEl.innerHTML = marked.parse(markdown);
+
+            } catch (error) {
+                showError(error.message);
+            }
+
+            function showError(message) {
+                contentEl.innerHTML = `
+                    <div class="error-message">
+                        <p><strong>Error:</strong> ${message}</p>
+                        <p style="margin-top: 1rem; color: var(--text-muted);">
+                            → <a href="../index.html#logs">Return to logs</a>
+                        </p>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+
+</html>

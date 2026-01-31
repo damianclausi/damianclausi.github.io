@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Damian Clausi - Developer Logs</title>
+    <link>https://damianclausi.github.io</link>
+    <description>Technical notes, tutorials, and insights from a Software Developer focused on Fullstack and Cloud.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Jan 2026 04:45:57 +0000</lastBuildDate>
+    <generator>Custom Python RSS Generator</generator>
+    <atom:link href="https://damianclausi.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Deploying a Fullstack App with Supabase and Vercel</title>
+      <link>https://damianclausi.github.io/logs/viewer.html?post=deploying-supabase-vercel</link>
+      <description>In this post, I'll walk through the process of deploying a fullstack application using Supabase as the backend and Vercel for hosting. This is the stack I used for my Final Degree Project: a managemen...</description>
+      <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://damianclausi.github.io/logs/viewer.html?post=deploying-supabase-vercel</guid>
+      <author>damian.clausi@gmail.com</author>
+    </item>
+    <item>
+      <title>Setting Up a Debian Home Server with Docker</title>
+      <link>https://damianclausi.github.io/logs/viewer.html?post=debian-home-server</link>
+      <description>Create a low-power, always-on server that handles:</description>
+      <pubDate>Thu, 25 Dec 2025 00:00:00 +0000</pubDate>
+      <guid>https://damianclausi.github.io/logs/viewer.html?post=debian-home-server</guid>
+      <author>damian.clausi@gmail.com</author>
+    </item>
+    <item>
+      <title>AWS Certified Developer Associate - Study Notes</title>
+      <link>https://damianclausi.github.io/logs/viewer.html?post=aws-developer-associate-notes</link>
+      <description>The AWS Certified Developer - Associate (DVA-C02) validates proficiency in:</description>
+      <pubDate>Sat, 15 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://damianclausi.github.io/logs/viewer.html?post=aws-developer-associate-notes</guid>
+      <author>damian.clausi@gmail.com</author>
+    </item>
+  </channel>
+</rss>
