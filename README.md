@@ -1,27 +1,21 @@
-# > damian_clausi.sh
+# damianclausi
 
-> Software Developer | Fullstack & Cloud Enthusiast
+Source code for [damianclausi.github.io](https://damianclausi.github.io) — personal portfolio and blog with a terminal-style UI.
 
-### [ system --info ]
-- **Core:** Node.js | React | Python
-- **Infra:** Linux | Docker | Git
-- **Status:** 🚀 Preparing for: AWS Certified Developer - Associate
+### Stack
+- Static HTML, CSS (JetBrains Mono, high-contrast theme), vanilla JavaScript
+- RSS feed (`feed.xml`) generated via `scripts/generate_rss.py`
+- Logs/blog posts in `logs/` (Markdown), rendered with `logs/viewer.html`
 
-### [ projects --latest ]
-- **management-system-coop:** Fullstack app (Node/React) with Supabase & Vercel.
-- **el-lector-voraz:** Academic Fullstack project (Architecture & Logic).
-- **home-server-lab:** Debian server automation with Docker.
+### Structure
+- `index.html` — main portfolio (summary, projects, stack, logs, contact)
+- `styles.css` / `script.js` — layout and behavior
+- `logs/*.md` — blog posts; `logs/viewer.html` — post viewer
+- `scripts/generate_rss.py` — build RSS from logs
+- `feed.xml` — RSS feed
 
-### [ logs --recent ]
-```
-[2026-01-26] deploying-supabase-vercel.md
-[2025-12-25] debian-home-server.md
-[2025-11-15] aws-developer-associate-notes.md
-```
-→ [Read more on damianclausi.github.io](https://damianclausi.github.io/#logs)
+### Run locally
+Open `index.html` in a browser, or use a simple static server (e.g. `python -m http.server 8000`). For RSS generation: `python scripts/generate_rss.py` (if needed).
 
-### [ network --connect ]
-[Portfolio](https://damianclausi.github.io) | [LinkedIn](https://linkedin.com/in/damianclausi) | [Email](mailto:damian.clausi@gmail.com)
-
----
-*Building robust solutions through clean code and cloud infrastructure.*
+### Live site
+→ [damianclausi.github.io](https://damianclausi.github.io)
